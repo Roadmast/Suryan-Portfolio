@@ -1,8 +1,7 @@
 export const runtime = "edge";
 
-export async function POST(req: Request) {
+export async function POST() {
   try {
-    const body = await req.json();
     return new Response(JSON.stringify({ success: true, message: "Mock Track Sent" }), {
       status: 200,
       headers: { "Content-Type": "application/json" },

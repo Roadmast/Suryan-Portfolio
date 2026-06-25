@@ -60,18 +60,20 @@ export function KiroSection() {
     setIsLoading(true);
 
     try {
-      const res = await fetch("/api/kiro", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMsg.content }),
-      });
+      // Fake network delay
+      await new Promise(resolve => setTimeout(resolve, 800));
 
-      if (!res.ok) throw new Error("Failed to fetch response");
+      const fakeReplies = [
+        "That's a great question about Surya! He is an amazing developer.",
+        "Surya loves building interactive and beautiful web experiences.",
+        "I'm a static mock right now, but normally I'd tell you all about Surya's skills.",
+        "Surya is currently focused on Next.js, React, and creating amazing UI/UX."
+      ];
+      const reply = fakeReplies[Math.floor(Math.random() * fakeReplies.length)];
 
-      const data = await res.json();
       setMessages((prev) => [
         ...prev,
-        { id: (Date.now() + 1).toString(), role: "assistant", content: data.reply },
+        { id: (Date.now() + 1).toString(), role: "assistant", content: reply },
       ]);
     } catch (error) {
       console.error(error);

@@ -7,6 +7,8 @@ import { GlassCursor } from "@/components/ui/glass-cursor";
 import { GalaxyBackground } from "@/components/ui/galaxy-background";
 import { KiroSection } from "@/components/sections/kiro-section";
 import { ThemeProvider } from "next-themes";
+import SEO from "@/lib/seo";
+import { SchemaMarkup } from "@/components/schema-markup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,8 +21,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Surya Narayana Siddamurthi",
-  description: "A futuristic developer portfolio built with Next.js 15, TypeScript, TailwindCSS, Redis, and AI integrations.",
+  title: SEO.title,
+  description: SEO.description,
+  keywords: SEO.keywords,
+  authors: [{ name: SEO.author }],
+  openGraph: {
+    ...SEO.openGraph,
+  },
+  twitter: {
+    ...SEO.twitter,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
+  },
 };
 
 export default function RootLayout({
@@ -34,6 +58,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
       suppressHydrationWarning
     >
+      <head>
+        <SchemaMarkup />
+      </head>
       <body className="min-h-full flex flex-col bg-black text-white selection:bg-cyan-500/30">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <SmoothScroll>

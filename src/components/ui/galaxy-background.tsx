@@ -39,8 +39,8 @@ export function GalaxyBackground({ className }: GalaxyBackgroundProps) {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // Original star properties
-    const numStars = 500;
+    // Original star properties - reduced from 500 to 300 for better performance
+    const numStars = 300;
     const stars: { x: number; y: number; z: number; size: number; alpha: number; isFire: boolean }[] = [];
 
     for (let i = 0; i < numStars; i++) {
@@ -54,8 +54,8 @@ export function GalaxyBackground({ className }: GalaxyBackgroundProps) {
       });
     }
 
-    // Central Blue Galaxy properties
-    const numGalaxyStars = 380;
+    // Central Blue Galaxy properties - reduced from 380 to 250 for better performance
+    const numGalaxyStars = 250;
     const galaxyStars: GalaxyStar[] = [];
     const R_galaxy_ratio = 0.25; // Galaxy radius relative to min screen dim
     const twist = 3.2 * Math.PI; // Spiral tightness to avoid looking like a cross
@@ -90,9 +90,9 @@ export function GalaxyBackground({ className }: GalaxyBackgroundProps) {
       });
     }
 
-    // Throttle to ~40fps for background canvas (saves CPU/GPU for foreground animations)
+    // Throttle to ~30fps for background canvas (saves CPU/GPU for foreground animations)
     let lastRenderTime = 0;
-    const TARGET_FPS = 40;
+    const TARGET_FPS = 30;
     const FRAME_INTERVAL = 1000 / TARGET_FPS;
 
     const render = (timestamp: number) => {
@@ -137,8 +137,8 @@ export function GalaxyBackground({ className }: GalaxyBackgroundProps) {
 
       ctx.restore();
 
-      // Update galaxy rotation
-      rotationAngle += 0.0015;
+      // Update galaxy rotation - slower for better performance
+      rotationAngle += 0.001;
 
       // 1. Render Central Blue Galaxy stars (Tilted manually to preserve star roundness)
       galaxyStars.forEach((star) => {

@@ -21,13 +21,13 @@ export function GlassCursor() {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  // Spring animations for the main cursor (responsive and tight)
-  const cursorX = useSpring(mouseX, { stiffness: 900, damping: 38, mass: 0.1 });
-  const cursorY = useSpring(mouseY, { stiffness: 900, damping: 38, mass: 0.1 });
+  // Spring animations for the main cursor (optimized for better performance)
+  const cursorX = useSpring(mouseX, { stiffness: 600, damping: 35, mass: 0.2 });
+  const cursorY = useSpring(mouseY, { stiffness: 600, damping: 35, mass: 0.2 });
 
   // Spring animations for the trailing water droplet (heavier drag for liquid feel)
-  const trailX = useSpring(mouseX, { stiffness: 140, damping: 22, mass: 0.7 });
-  const trailY = useSpring(mouseY, { stiffness: 140, damping: 22, mass: 0.7 });
+  const trailX = useSpring(mouseX, { stiffness: 120, damping: 25, mass: 0.8 });
+  const trailY = useSpring(mouseY, { stiffness: 120, damping: 25, mass: 0.8 });
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ripplesRef = useRef<Ripple[]>([]);
@@ -58,8 +58,8 @@ export function GlassCursor() {
       const dy = y - lastPosRef.current.y;
       const distance = Math.sqrt(dx * dx + dy * dy);
 
-      // Spawn a single organic ripple when moved more than 36px (decreased formation speed)
-      if (distance > 36) {
+      // Spawn a single organic ripple when moved more than 50px (reduced frequency for better performance)
+      if (distance > 50) {
         ripplesRef.current.push({
           x,
           y,
@@ -203,7 +203,7 @@ export function GlassCursor() {
         animate={{
           scale: isHovering ? 1.4 : 1,
         }}
-        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        transition={{ type: "spring", stiffness: 180, damping: 22 }}
       />
 
       {/* Main Cursor Outer Circle */}
@@ -222,7 +222,7 @@ export function GlassCursor() {
           borderColor: isHovering ? "rgba(6, 182, 212, 0.85)" : "rgba(6, 182, 212, 0.4)",
           backgroundColor: isHovering ? "rgba(6, 182, 212, 0.18)" : "rgba(6, 182, 212, 0)"
         }}
-        transition={{ type: "spring", stiffness: 900, damping: 35, mass: 0.2 }}
+        transition={{ type: "spring", stiffness: 700, damping: 40, mass: 0.25 }}
       />
 
       {/* Main Cursor Central Dot */}
@@ -238,7 +238,7 @@ export function GlassCursor() {
         animate={{
           scale: isHovering ? 1.3 : 1,
         }}
-        transition={{ type: "spring", stiffness: 1000, damping: 30, mass: 0.1 }}
+        transition={{ type: "spring", stiffness: 800, damping: 35, mass: 0.15 }}
       />
     </>
   );

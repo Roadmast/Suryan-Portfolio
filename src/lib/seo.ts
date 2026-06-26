@@ -1,6 +1,6 @@
 const SEO = {
   title: 'Surya Narayana Siddamurthi - AI & Full-Stack Engineer | Bengaluru',
-  description: 'A passionate AI & Full-Stack Engineer from Bengaluru building intelligent systems at the intersection of full-stack development and machine learning. Expert in Python, FastAPI, LangChain, and modern web technologies.',
+  description: 'Surya Narayana Siddamurthi is a Bengaluru-based AI and full-stack engineer building production GenAI systems, voice AI platforms, RAG applications, and FastAPI/Next.js products.',
   url: 'https://suryasiddamurthi.is-a.dev',
   siteName: 'Surya Narayana Siddamurthi Portfolio',
   author: 'Surya Narayana Siddamurthi',
@@ -26,28 +26,36 @@ const SEO = {
     'Bangalore',
     'India',
     'Remote Developer',
-    'Freelance Developer'
+    'Freelance Developer',
+    'Generative AI Engineer',
+    'AI Systems Architect',
+    'RAG Applications',
+    'Voice AI',
+    'Bengaluru AI Engineer'
   ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://suryasiddamurthi.is-a.dev',
     title: 'Surya Narayana Siddamurthi - AI & Full-Stack Engineer',
-    description: 'A passionate AI & Full-Stack Engineer building intelligent systems at the intersection of full-stack development and machine learning.',
+    description: 'Bengaluru-based AI and full-stack engineer building production GenAI systems, voice AI platforms, RAG applications, and FastAPI/Next.js products.',
     siteName: 'Surya Narayana Siddamurthi Portfolio',
     images: [
       {
-        url: '/opengraph-image',
+        url: 'https://suryasiddamurthi.is-a.dev/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Surya Narayana Siddamurthi Portfolio'
+        alt: 'Surya Narayana Siddamurthi - AI and Full-Stack Engineer'
       }
     ]
   },
   twitter: {
-    handle: '@suryasiddamurthi',
+    card: 'summary_large_image',
     site: '@suryasiddamurthi',
-    cardType: 'summary_large_image'
+    creator: '@suryasiddamurthi',
+    title: 'Surya Narayana Siddamurthi - AI & Full-Stack Engineer',
+    description: 'Bengaluru-based AI and full-stack engineer building production GenAI systems, voice AI platforms, RAG applications, and FastAPI/Next.js products.',
+    images: ['https://suryasiddamurthi.is-a.dev/twitter-image.png']
   }
 };
 

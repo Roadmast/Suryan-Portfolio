@@ -21,11 +21,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(SEO.url),
   title: SEO.title,
   description: SEO.description,
   keywords: SEO.keywords,
   authors: [{ name: SEO.author }],
+  creator: SEO.author,
+  publisher: SEO.author,
+  alternates: {
+    canonical: SEO.url,
+  },
   openGraph: {
     ...SEO.openGraph,
   },
@@ -42,9 +47,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 };
 

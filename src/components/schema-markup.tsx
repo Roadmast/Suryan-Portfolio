@@ -5,12 +5,12 @@ export function SchemaMarkup() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Surya Narayana Siddamurthi',
-    url: 'https://siddamurthi789.pages.dev',
-    image: 'https://siddamurthi789.pages.dev/profile-image.jpg',
+    url: 'https://suryasiddamurthi.is-a.dev',
+    image: 'https://suryasiddamurthi.is-a.dev/profile-image.jpg',
     sameAs: [
-      'https://github.com/siddamurthi789',
-      'https://linkedin.com/in/siddamurthi789',
-      'https://twitter.com/siddamurthi789',
+      'https://github.com/surya-narayana-siddamurthi',
+      'https://linkedin.com/in/surya-narayana-siddamurthi',
+      'https://x.com/suryasiddamurthi',
     ],
     jobTitle: 'AI & Full-Stack Engineer',
     worksFor: {
@@ -36,7 +36,7 @@ export function SchemaMarkup() {
     ],
     alumniOf: {
       '@type': 'CollegeOrUniversity',
-      name: 'Your University',
+      name: 'NBKR Institute of Science and Technology (NBKRIST)',
     },
     address: {
       '@type': 'PostalAddress',
@@ -54,11 +54,11 @@ export function SchemaMarkup() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Surya Narayana Siddamurthi Portfolio',
-    url: 'https://siddamurthi789.pages.dev',
+    url: 'https://suryasiddamurthi.is-a.dev',
     description: 'Portfolio of Surya Narayana Siddamurthi - AI & Full-Stack Engineer from Bengaluru',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://siddamurthi789.pages.dev/search?q={search_term_string}',
+      target: 'https://suryasiddamurthi.is-a.dev/search?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
     publisher: {
@@ -77,12 +77,12 @@ export function SchemaMarkup() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Surya Narayana Siddamurthi',
-    url: 'https://siddamurthi789.pages.dev',
-    logo: 'https://siddamurthi789.pages.dev/logo.png',
+    url: 'https://suryasiddamurthi.is-a.dev',
+    logo: 'https://suryasiddamurthi.is-a.dev/logo.png',
     sameAs: [
-      'https://github.com/siddamurthi789',
-      'https://linkedin.com/in/siddamurthi789',
-      'https://twitter.com/siddamurthi789',
+      'https://github.com/surya-narayana-siddamurthi',
+      'https://linkedin.com/in/surya-narayana-siddamurthi',
+      'https://x.com/suryasiddamurthi',
     ],
     address: {
       '@type': 'PostalAddress',
@@ -105,8 +105,8 @@ export function SchemaMarkup() {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'Surya Narayana Siddamurthi - AI & Full-Stack Engineering',
-    image: 'https://siddamurthi789.pages.dev/profile-image.jpg',
-    url: 'https://siddamurthi789.pages.dev',
+    image: 'https://suryasiddamurthi.is-a.dev/profile-image.jpg',
+    url: 'https://suryasiddamurthi.is-a.dev',
     telephone: '+91-XXXXXXXXXX',
     address: {
       '@type': 'PostalAddress',

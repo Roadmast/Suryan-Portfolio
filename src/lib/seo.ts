@@ -1,7 +1,7 @@
 const SEO = {
   title: 'Surya Narayana Siddamurthi - AI & Full-Stack Engineer | Bengaluru',
   description: 'A passionate AI & Full-Stack Engineer from Bengaluru building intelligent systems at the intersection of full-stack development and machine learning. Expert in Python, FastAPI, LangChain, and modern web technologies.',
-  url: 'https://siddamurthi789.pages.dev',
+  url: 'https://suryasiddamurthi.is-a.dev',
   siteName: 'Surya Narayana Siddamurthi Portfolio',
   author: 'Surya Narayana Siddamurthi',
   keywords: [
@@ -31,7 +31,7 @@ const SEO = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://siddamurthi789.pages.dev',
+    url: 'https://suryasiddamurthi.is-a.dev',
     title: 'Surya Narayana Siddamurthi - AI & Full-Stack Engineer',
     description: 'A passionate AI & Full-Stack Engineer building intelligent systems at the intersection of full-stack development and machine learning.',
     siteName: 'Surya Narayana Siddamurthi Portfolio',
@@ -45,8 +45,8 @@ const SEO = {
     ]
   },
   twitter: {
-    handle: '@siddamurthi789',
-    site: '@siddamurthi789',
+    handle: '@suryasiddamurthi',
+    site: '@suryasiddamurthi',
     cardType: 'summary_large_image'
   }
 };

@@ -1,0 +1,55 @@
+# Surya Narayana Siddamurthi
+
+> AI & Full-Stack Engineer specializing in intelligent agents, real-time voice, and enterprise architectures.
+
+## Info & Contact
+- Domain: https://suryasiddamurthi.is-a.dev/
+- GitHub: https://github.com/surya-narayana-siddamurthi
+- LinkedIn: https://linkedin.com/in/surya-narayana-siddamurthi
+- Email: surya@gmail.com
+- Location: Bengaluru, Karnataka, India
+
+## Professional Profile
+Surya is a passionate Generative AI Engineer, AI Systems Architect, and Applied AI Researcher with 3+ years of experience designing and deploying enterprise-grade production AI systems. His work focuses on building autonomous, reliable, and scalable agentic ecosystems that combine Large Language Models (LLMs), Voice AI, Retrieval-Augmented Generation (RAG), and robust FastAPI backends.
+
+## Core Skill Set
+
+### Generative AI & ML
+- **Frameworks & Orchestration:** LangChain, LangGraph, CrewAI, LlamaIndex
+- **Models:** OpenAI GPT series, Anthropic Claude, Google Gemini, Stable Diffusion (SDXL fine-tuning)
+- **Voice & Conversational AI:** Real-time Speech-to-Text (STT), Text-to-Speech (TTS), WebSocket communication, automated call routing
+- **Computer Vision:** Deep learning models for facial emotion detection, head pose estimation, and identity verification (98% accuracy)
+
+### Backend & Architecture
+- **Frameworks:** Python, FastAPI, Next.js, Node.js
+- **Microservices & Messaging:** Redis, Celery, RabbitMQ, REST APIs, WebSockets
+- **Authentication:** Centralized SSO solutions, Firebase Auth, OAuth2/OIDC federation
+- **Databases:** PostgreSQL, Redis, MongoDB, Firebase
+
+### DevOps & Cloud
+- **Containers & Virtualization:** Docker, Kubernetes
+- **CI/CD:** GitHub Actions, automated testing, static code analysis
+- **Hosting & Infrastructure:** Static exports, Vercel, Hugging Face Spaces, Cloudflare
+
+## Featured Projects
+
+### Multilindo Image Craft
+- Specialized multi-lingual text-to-image generator powered by SDXL.
+- Curated training datasets, fine-tuned the base SDXL model, and deployed on Hugging Face spaces.
+
+### Voice AI Automation Platform
+- Real-time inbound and outbound calling automation system.
+- Manages real-time voice conversations, handles user input forms, and triggers ticket updates dynamically.
+
+### AI Tutoring Platform
+- Web educational portal featuring an intelligent tutor, automated lesson planning, quiz generators, and study material generators.
+
+### Multi-Channel Support Platform
+- Contextual support system integrated with Web, WhatsApp, and Email.
+- Uses RAG pipelines for resolving issues and handles fallback logic for human agent handoffs.
+
+### AI Music Streamer
+- Autonomous pipeline that generates ambient music and streams the audio output to YouTube 24/7.
+
+### AI Job Prep Suite
+- Resume parsing tool that generates custom competency quizzes, offers career advice, and calculates ATS match scores.

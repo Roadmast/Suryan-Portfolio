@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://siddamurthi789.pages.dev';
+  const baseUrl = 'https://suryasiddamurthi.is-a.dev';
 
   return {
     rules: [
@@ -14,6 +14,11 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'OAI-SearchBot'],
         allow: '/',
         disallow: ['/api/', '/admin/'],
       },

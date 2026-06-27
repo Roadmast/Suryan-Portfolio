@@ -217,11 +217,10 @@ export function AboutSection() {
           {/* Right Column: Capabilities & Focus */}
           <div className="lg:col-span-8 flex flex-col md:flex-row gap-6 items-stretch">
 
-            {/* What I Do Card */}
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.01 }}
-              className="w-full md:w-[100%] bg-neutral-900/40 border border-white/5 p-6 rounded-2xl backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300 shadow-xl flex flex-col card-lift"
+              className="w-full md:flex-[3] bg-neutral-900/40 border border-white/5 p-6 rounded-2xl backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300 shadow-xl flex flex-col card-lift"
             >
               <h3 className="text-xl font-bold font-comfortaa text-white mb-6 flex items-center gap-2">
                 <Layers className="w-5 h-5 text-cyan-400" />
@@ -252,11 +251,10 @@ export function AboutSection() {
               </div>
             </motion.div>
 
-            {/* Current Focus Card */}
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.01 }}
-              className="w-full md:w-[40%] bg-neutral-900/40 border border-white/5 p-6 rounded-2xl backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300 shadow-xl flex flex-col card-lift"
+              className="w-full md:flex-[2] bg-neutral-900/40 border border-white/5 p-6 rounded-2xl backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300 shadow-xl flex flex-col card-lift"
             >
               <h3 className="text-xl font-bold font-comfortaa text-white mb-5 flex items-center gap-2">
                 <Network className="w-5 h-5 text-cyan-400" />

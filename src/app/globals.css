@@ -48,12 +48,6 @@ body {
   color: #ffffff;
 }
 
-/* ─── Hide default cursor for fine pointer devices ─── */
-@media (pointer: fine) {
-  body, html, a, button, [role="button"], input, select, textarea, * {
-    cursor: none !important;
-  }
-}
 
 /* ─── Premium Custom Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }

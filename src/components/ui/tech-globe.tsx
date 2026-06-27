@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface TechGlobeProps {
@@ -10,6 +10,22 @@ interface TechGlobeProps {
 
 export function TechGlobe({ className, size = 400 }: TechGlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [globeSize, setGlobeSize] = useState(size);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setGlobeSize(280);
+      } else if (window.innerWidth < 1024) {
+        setGlobeSize(340);
+      } else {
+        setGlobeSize(size);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [size]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,13 +36,13 @@ export function TechGlobe({ className, size = 400 }: TechGlobeProps) {
 
     // Set canvas resolution for crisp text (retina display support)
     const dpr = window.devicePixelRatio || 1;
-    canvas.width = size * dpr;
-    canvas.height = size * dpr;
+    canvas.width = globeSize * dpr;
+    canvas.height = globeSize * dpr;
     ctx.scale(dpr, dpr);
     
     // Physical size in CSS
-    canvas.style.width = `${size}px`;
-    canvas.style.height = `${size}px`;
+    canvas.style.width = `${globeSize}px`;
+    canvas.style.height = `${globeSize}px`;
 
     const techStack = [
       "Python", "SQL", "RAG", "AI Agents", "Multi-Agent",
@@ -38,9 +54,9 @@ export function TechGlobe({ className, size = 400 }: TechGlobeProps) {
       "Docker", "CI/CD", "Linux", "Git", "GitHub"
     ];
 
-    const radius = size / 2.5;
-    const centerX = size / 2;
-    const centerY = size / 2;
+    const radius = globeSize / 2.5;
+    const centerX = globeSize / 2;
+    const centerY = globeSize / 2;
 
     // Distribute points on a sphere (Fibonacci sphere)
     const points: { x: number, y: number, z: number, text: string }[] = [];
@@ -60,9 +76,11 @@ export function TechGlobe({ className, size = 400 }: TechGlobeProps) {
     let angleX = 0;
     let angleY = 0;
     let animationFrameId: number;
+    let isVisible = true;
 
     const render = () => {
-      ctx.clearRect(0, 0, size, size);
+      if (!isVisible) return;
+      ctx.clearRect(0, 0, globeSize, globeSize);
       
       // Auto rotation
       angleX += 0.002;
@@ -84,7 +102,7 @@ export function TechGlobe({ className, size = 400 }: TechGlobeProps) {
         let z2 = z1 * cosX + point.y * sinX;
 
         // Perspective projection
-        const focalLength = size;
+        const focalLength = globeSize;
         const scale = focalLength / (focalLength + z2);
 
         const xProjected = centerX + x1 * scale;
@@ -113,10 +131,28 @@ export function TechGlobe({ className, size = 400 }: TechGlobeProps) {
       animationFrameId = requestAnimationFrame(render);
     };
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const wasVisible = isVisible;
+        isVisible = entry.isIntersecting;
+        if (isVisible && !wasVisible) {
+          // Restart loop if transitioned to visible
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = requestAnimationFrame(render);
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(canvas);
+
+    // Initial render trigger
     render();
 
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [size]);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [globeSize]);
 
   return (
     <div className={cn("relative flex items-center justify-center", className)}>

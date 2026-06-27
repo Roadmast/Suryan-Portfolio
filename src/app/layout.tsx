@@ -3,8 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Navbar } from "@/components/ui/navbar";
-import { GlassCursor } from "@/components/ui/glass-cursor";
-import { GalaxyBackground } from "@/components/ui/galaxy-background";
 import { KiroSection } from "@/components/sections/kiro-section";
 import { ThemeProvider } from "next-themes";
 import SEO from "@/lib/seo";
@@ -67,8 +65,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-black text-white selection:bg-cyan-500/30">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <SmoothScroll>
-            <GalaxyBackground />
-            <GlassCursor />
             <Navbar />
             <KiroSection />
             <main className="flex-1 flex flex-col mt-20 relative z-10">

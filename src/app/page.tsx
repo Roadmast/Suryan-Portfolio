@@ -105,8 +105,8 @@ export default function Home() {
         id="home"
         className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 py-20 relative overflow-hidden max-w-full w-full scroll-mt-20 select-none"
       >
-        {/* Orbit Rings & Floating Tech Badges Wrapper */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none scale-[0.42] sm:scale-[0.65] md:scale-[0.85] lg:scale-100 origin-center select-none z-0">
+        {/* Orbit Rings & Floating Tech Badges Wrapper - Desktop Only */}
+        <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none md:scale-[0.85] lg:scale-100 origin-center select-none z-0">
 
           {/* Inner Orbit (Radius 160px) — slow spin */}
           <div className="absolute left-1/2 top-1/2 orbit-ring-spin w-[320px] h-[320px] rounded-full border border-dashed border-white/15" />
@@ -255,6 +255,27 @@ export default function Home() {
             </motion.a>
 
 
+          </div>
+
+          {/* Mobile-only core tech stack display (hidden on md and above) */}
+          <div className="mt-14 w-full md:hidden flex flex-col items-center gap-3">
+            <p className="text-[10px] font-bold tracking-[0.25em] text-cyan-400/90 uppercase font-comfortaa">
+              Core Tech Stack
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 max-w-sm px-4">
+              {orbitSkills.map((skill) => {
+                const Icon = skill.icon;
+                return (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-neutral-900/50 border border-white/5 backdrop-blur-md"
+                  >
+                    <span className="w-3.5 h-3.5 shrink-0"><Icon /></span>
+                    <span className="text-[10px] font-bold text-gray-300 font-sans tracking-wide">{skill.name}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </section>
